@@ -1,4 +1,3 @@
-// Catch any hidden startup crashes and print them to Render logs
 process.on('uncaughtException', (err) => {
   console.error('🔥 UNCAUGHT EXCEPTION:', err);
   process.exit(1);
@@ -23,7 +22,7 @@ async function startServer() {
     const SERVER_PORT = port || process.env.PORT || 5000;
 
     app.listen(SERVER_PORT, '0.0.0.0', () => {
-      console.log(`🚀 RMS Backend server running on port ${SERVER_PORT}`);
+      console.log('🚀 RMS Backend server running on port ' + SERVER_PORT);
     });
   } catch (err) {
     console.error('❌ Failed to start server during connectDB:', err);
